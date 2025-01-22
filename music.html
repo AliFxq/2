@@ -6,41 +6,86 @@
     <title>知音</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9; /* 背景颜色更柔和 */
             color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff; /* 内容区域白色背景 */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
         h1, h2{
             text-align: center;
+            background-color: #d3d3d3;
+            margin: 0;
             padding: 20px;
+            border-bottom: 2px solid #ccc;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
         }
         p{
-            padding: 20px;
+            line-height: 1.6;
+            text-indent: 2em;
+            margin: 20px 0;
         }
         img{
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 20px auto;
             max-width: 100%;
             height: auto;
+            border: 5px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        audio {
+            display: block;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        b {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        @media (max-width: 600px) {
+            body { font-size: 14px; }
+            h1, h2 { font-size: 1.5em; }
+            .container { padding: 15px; }
         }
     </style>
 </head>
 <body>
-    <h1>知音：古琴曲《流水》</h1>
-    <audio controls style="display: block; margin: 0 auto;">
-        <source src="https://pub-6c547777932b4d738b2df90ab7edc34a.r2.dev/LiuShui.mp3" type="audio/mpeg">
-        您的浏览器不支持 audio 元素。
-    </audio>
-    <p><b>古琴曲鉴赏</b><br>
-        《流水》是一首极具表现力的乐曲，生动地描绘了流水的各种情态。曲子开头是模仿淙淙铮铮，松根之细流的泛音，仿佛凝神静听行云流水般的旋律，好似欢泉于山涧鸣响，令人愉悦。曲中的滚拂描绘极腾沸澎湃之观，具蛟龙怒吼之象。息心静听，宛然坐危舟过巫峡，惊心动魄，几疑此身已在群山奔赴，万壑争流之际矣。而后音势大减，恰如轻舟已过，势就倘佯，时而余波激石，时而旋洑微沤。曲末流水之声复起，缓缓收势，整首乐曲一气呵成，听之如同得到了流水的洗涤一般，又有借景寄情于友人的念念不忘之情，不禁令人久久沉浸于“洋洋乎，诚古调之希声者乎”的思绪中 。</p>
-        <p><b>古琴演奏家</b><br>
-            管平湖（1897年-1967年），名平，字吉庵、仲康，号平湖，祖籍江苏苏州。琴艺博取“九嶷派”、“武夷派”及“川派”三派之长，弹奏运指稳重刚健、刹有神韵、风格苍劲古朴、刚柔相济，形成近代中国琴坛上有重要地位的“管派”，代表曲目有《流水》、《广陵散》、《幽兰》等。</p>
+    <div class="container">
+        <h1>知音：古琴曲《流水》</h1>
+        <audio controls>
+            <source src="https://pub-6c547777932b4d738b2df90ab7edc34a.r2.dev/LiuShui.mp3" type="audio/mpeg">
+            您的浏览器不支持 audio 元素。
+        </audio>
+        <p><b>古琴曲鉴赏</b></p>
+        <p>
+            《流水》是一首极具表现力的乐曲，生动地描绘了流水的各种情态。曲子开头是模仿淙淙铮铮，松根之细流的泛音，仿佛凝神静听行云流水般的旋律，好似欢泉于山涧鸣响，令人愉悦。曲中的滚拂描绘极腾沸澎湃之观，具蛟龙怒吼之象。息心静听，宛然坐危舟过巫峡，惊心动魄，几疑此身已在群山奔赴，万壑争流之际矣。而后音势大减，恰如轻舟已过，势就倘佯，时而余波激石，时而旋洑微沤。曲末流水之声复起，缓缓收势，整首乐曲一气呵成，听之如同得到了流水的洗涤一般，又有借景寄情于友人的念念不忘之情，不禁令人久久沉浸于“洋洋乎，诚古调之希声者乎”的思绪中 。
+        </p>
+        <p><b>古琴演奏家</b></p>
+        <p>
+            管平湖（1897年-1967年），名平，字吉庵、仲康，号平湖，祖籍江苏苏州。琴艺博取“九嶷派”、“武夷派”及“川派”三派之长，弹奏运指稳重刚健、刹有神韵、风格苍劲古朴、刚柔相济，形成近代中国琴坛上有重要地位的“管派”，代表曲目有《流水》、《广陵散》、《幽兰》等。
+        </p>
         <img src="https://pub-6c547777932b4d738b2df90ab7edc34a.r2.dev/GuanPingHu.webp" alt="管平湖" width="300">
-    <p><b>古琴</b><br>
-        古琴又称瑶琴、玉琴、七弦琴，最早出现时间可追溯至三皇五帝时期。古琴集道儒两家精髓于一身，讲求中正平和、宁静致远、天人合一，一直被视为文人雅士修身养性的象征，因此又有“四艺之首”“八音之首”的美誉。<br>大圣遗音琴形制古朴典雅，距今已有1250多年的历史，是存世为数不多的唐琴之一。在2011年5月22日晚举行的中国嘉德2011春季拍卖宫廷御瓷珍玩专场中，大圣遗音琴以1.15亿元人民币成交。</p>
-    <img src="https://pub-6c547777932b4d738b2df90ab7edc34a.r2.dev/dashengyiyinqin.png" alt="大圣遗音琴" width="300">
+        <p><b>古琴</b></p>
+        <p>
+            古琴又称瑶琴、玉琴、七弦琴，最早出现时间可追溯至三皇五帝时期。古琴集道儒两家精髓于一身，讲求中正平和、宁静致远、天人合一，一直被视为文人雅士修身养性的象征，因此又有“四艺之首”“八音之首”的美誉。<br>大圣遗音琴形制古朴典雅，距今已有1250多年的历史，是存世为数不多的唐琴之一。在2011年5月22日晚举行的中国嘉德2011春季拍卖宫廷御瓷珍玩专场中，大圣遗音琴以1.15亿元人民币成交。
+        </p>
+        <img src="https://pub-6c547777932b4d738b2df90ab7edc34a.r2.dev/dashengyiyinqin.png" alt="大圣遗音琴" width="300">
+    </div>
 </body>
 </html>
