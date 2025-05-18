@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐经典鉴赏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            text-align: center;
+            margin: 2rem 0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.6s all ease;
+        }
+
+        section.visible {
+            opacity: 1;
+        transform: translateY(0);
+        }
+
+        h2 {
+            color: #3498db;
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-size: 1.6rem;
+        }
+
+        blockquote {
+            background: #f8f9fa;
+            border-left: 4px solid #e74c3c;
+            margin: 1rem 0;
+            padding: 1rem;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            border-bottom: 1px dashed transparent;
+        }
+
+        a:hover {
+            border-bottom-color: #3498db;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 音乐经典鉴赏</h1>
+        <!-- 梅花三弄部分 -->
+        <section class="animate-section">
+            <h2>梅花三弄</h2>
+<div class="audio-player">
+    <h3>乐曲欣赏</h3>
+    <audio controls>
+        <source src="https://pub-6c547777932b4d738b2df90ab7edc34a.r2.dev/san.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放
+    </audio>
+</div>
+            <h3>演奏家</h3>
+            <p>陆春龄，是中国笛子演奏与作曲的杰出代表，有“中国魔笛”之美誉。他演奏的作品，音色淳厚圆润，纯净甜美，表演细腻，能自如地运用颤音、震音、历音、打音等润饰曲调。其演奏在气口之精微、指法之奥妙、音色之浓郁，普为国内外乐坛及知音所尊崇，尤其在江南丝竹上，广蓄并纳，独树一帜的体系堪称笛界的一代宗师。</p>
+
+            <h3>演奏乐器</h3>
+            <p>中国笛子历史悠久，可以追溯到新石器时代。竹笛由一
+根竹管做成，里面去节中空成内膛，外呈圆柱形，在管身上
+开有1个吹孔、1个膜孔、6个音孔、2个基音孔和2个助音
+孔。<br>
+笛子不但演奏技巧丰富，而且它的品种也多种多样，有
+曲笛、梆笛、定调笛、加键笛、玉屏笛、七孔笛、十一孔笛等，并形成了风格迥异的南北两派。笛子实际上是一类乐器的通称，从音高上分类，笛子一般分为曲笛 （笛身较为粗长，音高较低，音色醇厚，多分布于中国南方）、梆笛（笛身较为细短，音高较高，音色清亮，多用于中国北方各戏种）和中音笛（形状、发音特点介于曲笛和梆笛之间）。</p>
+            <img src="https://pub-6c547777932b4d738b2df90ab7edc34a.r2.dev/zhudi.jpg" alt="笛子示意图">
+
+            <p>相关链接：
+                <a href="https://baike.baidu.com/item/曲笛">曲笛</a>、
+                <a href="https://baike.baidu.com/item/梆笛">梆笛</a>、
+                <a href="https://baike.baidu.com/item/玉屏">玉屏笛</a>
+            </p>
+        </section>
+    </div>
+
+    <script>
+        // 滚动动画效果
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
