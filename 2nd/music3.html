@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楼兰追梦 - 箜篌艺术</title>
+    <style>
+        :root {
+            --primary-color: #6d4c41;
+            --secondary-color: #a1887f;
+            --bg-color: #f5e6d3;
+        }
+
+        body {
+            font-family: "思源宋体", serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        img.loaded {
+            opacity: 1;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+            margin: 25px 0;
+        }
+
+        .collapse-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .collapsible {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>《楼兰追梦》拓展阅读</h1>
+        <div class="audio-player">
+            <h3>乐曲欣赏</h3>
+            <audio controls>
+                <source src="https://pub-6c547777932b4d738b2df90ab7edc34a.r2.dev/llzmyy.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放
+            </audio>
+        </div>
+        <section class="section">
+            <h2>作曲家：崔君芝</h2>
+            <p>崔君芝作为中国箜篌艺术的领军人物，深耕箜篌演奏与研究数十载，创新改良演奏技法，将箜篌的表现力推向新高度。在《楼兰追梦》中，她以精湛技艺赋予曲子灵魂，用琴弦的震颤唤醒沉睡千年的楼兰记忆，她的手指在琴弦上轻盈地跳跃，仿佛是在弹奏着一首古老的史诗，让人们感受到了箜篌的魅力和魔力。</p>
+            <img src="https://pub-6c547777932b4d738b2df90ab7edc34a.r2.dev/llzm.png" alt="箜篌演奏" 
+                 onload="this.classList.add('loaded')">
+        </section>
+
+        <section class="section">
+            <h2>乐器介绍：箜篌</h2>
+            <button class="collapse-btn" onclick="toggleCollapse('intro')">显示详情</button>
+            <div id="intro" class="collapsible">
+                <p>箜篌是中国古老弹弦乐器，它起源于汉代西域，后来传入中原，在唐代达到鼎盛。箜篌的外形独特，箜篌的音色清脆空灵，富有穿透力，能够表现出各种不同的情感和意境。分为竖式和卧式两种，竖式箜篌类似于西方的竖琴，卧式箜篌则类似于古筝。</p>
+                
+                <h3>（一）音色特点</h3>
+                <p>它的高音区明亮清脆，如同鸟鸣般悦耳；中音区柔和优美，如同人声般温暖；低音区深沉厚重，如同大地般沉稳。这种独特的音色特点，使得箜篌在演奏中能够很好地表现出古代诗词的意境和情感。</p>
+
+                <h3>（二）演奏技巧</h3>
+                <p>箜篌的演奏技巧复杂多样，需要演奏者具备较高的技巧和艺术修养，如轮指、扫弦、滑音、拨弦、按弦等操作。这些演奏技巧的运用，使得箜篌能够演奏出丰富多彩的音乐作品。</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 图片懒加载
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if(img.complete) img.classList.add('loaded');
+            });
+        });
+
+        // 折叠功能
+        function toggleCollapse(targetId) {
+            const target = document.getElementById(targetId);
+            const isCollapsed = target.style.maxHeight === '0px' || !target.style.maxHeight;
+            
+            target.style.maxHeight = isCollapsed 
+                ? target.scrollHeight + "px" 
+                : "0px";
+            
+            event.target.textContent = isCollapsed ? "收起详情" : "显示详情";
+        }
+    </script>
+</body>
+</html>
